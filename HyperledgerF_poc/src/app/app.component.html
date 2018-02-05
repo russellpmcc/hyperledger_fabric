@@ -1,0 +1,68 @@
+<div class="row">
+
+</div>
+<div class="row">
+  <nav>
+    <div class="nav-wrapper">
+      <a href="/welcome" class="brand-logo"> <img  style="width: 111px;" src="../assets/logo.png"></a>
+     
+      
+      
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li>
+          <a routerLink="/welcome">Home</a>
+        </li>
+        <li>
+            <a routerLink="/searchEmp">Search employee</a>
+        </li>
+        <li>
+          <a routerLink="/addEmp">Add employee</a>
+        </li>
+        <li>
+          <a routerLink="/">Admin tools</a>
+        </li>
+        <li>
+            <a  href="https://www.linkedin.com/in/vishal3152/" target="_blank">About me</a>
+          </li>
+      </ul>
+    </div>
+  </nav>
+</div>
+
+<div class="row">
+       
+  <div class="col s12">
+    <div class="card blue lighten-3 panel">
+      <div class="card-content ">
+        <span class="card-title"></span>
+        <router-outlet></router-outlet>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <p class="grey-text text-lighten-4">Built on Angular for the love of block chain.<i class="material-icons">sentiment_very_satisfied</i><br> 
+          Wish to collaborate or learn more? Do reach out to me on <a class="grey-text text-lighten-4" href="https://www.linkedin.com/in/vishal3152/" target="_blank"><u>LinkedIn</u></a></p>
+        </div>
+        <div class="col l4 s12 right-align">
+      <br><br>
+             <a class="grey-text text-lighten-4 " href="http://18.218.79.90:5984/_all_dbs" target="_blank"><u>CouchDB state</u></a>
+            <br> <a class="grey-text text-lighten-4 " >This app is hosted on a AWS free Tier instance.</a>
+           </div>
+        
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2018 Vishal 
+        <a class="grey-text text-lighten-4 right" href="https://hyperledger-fabric.readthedocs.io/en/release/" target="_blank">Built with <u>Hyperledger Fabric</u> </a>
+      </div>
+    </div>
+  </footer>
+</div>

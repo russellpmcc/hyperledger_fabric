@@ -1,0 +1,124 @@
+<head>
+    <script>
+        $(document).ready(function () {
+            $('select').material_select();
+        });
+
+    </script>
+</head>
+
+<div class="row">
+    <div class="col s12">
+        <div class="card  white">
+            <div class="card-content indigo-text text-darken-2">
+                <span class="card-title">
+                    <b>Employee Information</b>
+                </span>
+                <hr> *All fields are mandatory
+                <br>
+                <br>
+                <div class="row indigo-text">
+                    <div class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="first" type="text" class="validate" [(ngModel)]="emp.fname">
+                                <label for="first_name">*First Name</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="last_name" type="text" class="validate" [(ngModel)]="emp.lname">
+                                <label for="last_name">*Last Name</label>
+                            </div>
+                        </div>
+                        <div class="row">
+
+                            <div class="input-field col s6">
+                                <input id="adhaar" type="text" class="validate" [(ngModel)]="emp.adhaar">
+                                <label for="adhaar">*Aadhaar No.</label>* Aadhaar is the unique identifier for employee on blockchain.
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="eid" type="text" class="validate" [(ngModel)]="emp.eid">
+                                <label for="eid">*Employee Id</label>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6 indigo-text">
+                                <input id="dob" type="text" class="validate" [(ngModel)]="emp.dob">
+                                <label for="dob">*Date of Birth(dd-mm-yyy)</label>
+                            </div>
+                            <div class="col s6">
+                                <span>*Gender</span>
+                                <p>
+                                    <input name="group1" type="radio" id="test1" (click)="emp.gender='MALE'" />
+                                    <label for="test1">MALE</label>
+                                </p>
+                                <p>
+                                    <input name="group1" type="radio" id="test2" (click)="emp.gender='FEMALE'" />
+                                    <label for="test2">FEMALE</label>
+                                </p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="email" type="email" class="validate" [(ngModel)]="emp.email">
+                                <label for="email">*Email</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="phone" type="text" class="validate" [(ngModel)]="emp.phone">
+                                <label for="phone">*Phone</label>
+                            </div>
+                            <div class="row">
+                                <div class="col s6">
+
+                                    <div class="input-field inline">
+                                        <input id="cmnts" type="text" class="validate" [(ngModel)]="emp.comments">
+                                        <label for="cmnts">*Comments</label>
+                                    </div>
+                                </div>
+                                <div class="col s6">
+                                    <div class=" indigo-text">
+                                        <span>*Employer</span>
+                                        <p>
+                                            <input name="group4" type="radio" id="test6" (click)="emp.employer='4321'" />
+                                            <label for="test6">Google</label>
+                                        </p>
+                                        <p>
+                                            <input name="group4" type="radio" id="test7" (click)="emp.employer='4322'" />
+                                            <label for="test7">Microsoft</label>
+                                        </p>
+                                        <p>
+                                            <input name="group4" type="radio" id="test8" (click)="emp.employer='3150'" />
+                                            <label for="test8">DIT</label>
+                                        </p>
+                                    </div>
+                                    <!-- <input id="dob" type="text" class="validate" [(ngModel)]="emp.employer">
+                                    <label for="dob">Employer</label>-->
+                                </div>
+                                <div class="col s6">
+                                    <br>
+
+                                </div>
+                                <!--<div class="col s6">
+                                    <span>Action</span>
+                                    <p>
+                                        <input name="group2" type="radio" id="test3" (click)="emp.status='RELEASED'" />
+                                        <label for="test3">Release</label>
+                                    </p>
+                                    <p>
+                                        <input name="group2" type="radio" id="test4" (click)="emp.status='EMPLOYED'" />
+                                        <label for="test4">Onboard</label>
+                                    </p>
+                                </div>-->
+                            </div>
+
+                        </div>
+                        <div class="row">
+
+                        </div>
+                        <a class="waves-effect waves-light btn" (click)="addEmployee()">Add Employee</a>
+                        <br>{{resp}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

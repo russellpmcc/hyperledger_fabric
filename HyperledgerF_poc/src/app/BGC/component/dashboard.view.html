@@ -1,0 +1,23 @@
+<div class="row">
+
+  <div class="col s12">
+    <div class="card  white">
+      <div class="card-content indigo-text text-darken-2">
+        <span class="card-title">
+          Enter employee aadhaar no:
+        </span>
+        <div>
+          <span>
+
+            <input type="text" [(ngModel)]="assetId">
+          </span>
+          <div class="right-align">Don't have one? Try with 2270055</div>
+          <br>
+          <button class="btn waves-effect waves-light pulse" routerLink="/searchAsset/{{assetId}}">Search
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

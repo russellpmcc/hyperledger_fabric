@@ -1,0 +1,70 @@
+<div class="row">
+    <div class="col s12">
+        <div class="card  white">
+            <div class="card-content indigo-text text-darken-2">
+                <span class="card-title">
+                    Employee aadhaar no: {{emp.adhaar}}
+                </span>
+                <hr> * All fields are mandatory
+                <div class="row indigo-text">
+                    <div class="col s12">
+
+                        <div class="row">
+                            <div class="col s6">
+                                <br>
+                                <div class="input-field inline">
+                                    <input id="reason" type="text" class="validate" [(ngModel)]="emp.reason">
+                                    <label for="reason">*Reason</label>
+                                </div>
+                            </div>
+                            <div class="col s6">
+                                <br>
+                                <div class="input-field inline">
+                                    <input id="cmnts" type="text" class="validate" [(ngModel)]="emp.comments">
+                                    <label for="cmnts">*Comments</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="col s6">
+                                <span>*Action</span>
+                                <p>
+                                    <input name="group1" type="radio" id="test1" (click)="emp.status='EMPLOYED'" />
+                                    <label for="test1">Onboard</label>
+                                </p>
+                                <p>
+                                    <input name="group1" type="radio" id="test2" (click)="emp.status='RELEASED'" />
+                                    <label for="test2">Release</label>
+                                </p>
+                            </div>
+                            <div *ngIf="emp.status!='RELEASED'" class="col s6 indigo-text">
+                                <span>Employer</span>
+                                <p>
+                                    <input name="group4" type="radio" id="test6" (click)="emp.employer='4321';emp.employerName='Google'" />
+                                    <label for="test6">Google</label>
+                                </p>
+                                <p>
+                                    <input name="group4" type="radio" id="test7" (click)="emp.employer='4322';emp.employerName='Microsoft'" />
+                                    <label for="test7">Microsoft</label>
+                                </p>
+                                <p>
+                                    <input name="group4" type="radio" id="test8" (click)="emp.employer='3150';emp.employerName='DIT'" />
+                                    <label for="test8">DIT</label>
+                                </p>
+
+                            </div>
+
+
+
+                        </div>
+
+                    </div>
+
+                    <a class="waves-effect waves-light btn" (click)="procEmployee()">Submit</a>
+                    <br>{{resp}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,127 @@
+<div *ngIf="assetDetails; else noassetTemplate" class="row">
+    <div class="col s12">
+        <div class="card  white">
+            <div class="card-content indigo-text text-darken-2">
+                <span class="card-title">
+                    Employee details
+                </span>
+                <hr>
+                <br>
+                <table class="highlight">
+                    <tbody>
+                        <tr>
+                            <td>
+                                Employee id:
+                            </td>
+                            <td>{{assetDetails.empployeeID}}</td>
+                            <td>Adhaar:</td>
+                            <td>{{assetDetails.aadhaar}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>Name:</td>
+                            <td>{{assetDetails.firstName}} {{assetDetails.lastName}}</td>
+                            <td>Gender:</td>
+                            <td>{{assetDetails.gender}}</td>
+                        </tr>
+                        <tr>
+                            <td>Email:</td>
+                            <td>{{assetDetails.contactDetails.email}} </td>
+                            <td>Phone:</td>
+                            <td>{{assetDetails.contactDetails.mobilePhone}}</td>
+                        </tr>
+                        <tr>
+                            <td>DoB</td>
+                            <td>{{assetDetails.birthDetails.dateOfBirth}} </td>
+                            <td>Status</td>
+                            <td>{{assetDetails.status}} </td>
+                        </tr>
+                        <tr>
+                            <td>Employer</td>
+                            <td>{{assetDetails.employer}} </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+        <div class="">
+            <a class="waves-effect waves-light btn" (click)="searchHistory()">history</a>
+
+            <button class="waves-effect waves-light btn " routerLink="/relEmp/{{assetId}}/{{assetDetails.employer}}/{{assetDetails.status}}">Release</button>
+            <button class="waves-effect waves-light btn " routerLink="/relEmp/{{assetId}}/{{assetDetails.employer}}/{{assetDetails.status}}">Onboard</button>
+
+        </div>
+    </div>
+    <div class="row"></div>
+    <div class="row"></div>
+
+</div>
+<div class="row">
+    <div *ngIf="historyVisibility">
+
+
+        <div class=" teal accent-1">
+            <div class=" indigo-text text-darken-2">
+
+                <h5>
+                    Employment history (chained - blocks):
+                </h5>
+                <hr>
+
+
+            </div>
+        </div>
+
+        <div *ngFor="let AssetHistoryItem of assetHistory">
+            <div class="col s6">
+                <div class="card deep-purple lighten-5">
+                    <div class="card-content indigo-text text-darken-2">
+                        <span class="card-title">
+                            <span *ngIf="AssetHistoryItem.action=='EMPLOYED'">Employee onboarded</span>
+                            <span *ngIf="AssetHistoryItem.action=='RELEASED'">Employee released</span>
+                        </span>
+                        <table class="striped">
+                            <tr>
+                                <td>Employer:</td>
+                                <td>{{AssetHistoryItem.newEmployer}}</td>
+                            </tr>
+                            <tr>
+                                <td>Joining date:</td>
+                                <td>{{AssetHistoryItem.timestamp|slice:0:10}}</td>
+                            </tr>
+                            <tr>
+                                <td>Comments:</td>
+                                <td>{{AssetHistoryItem.comments}}</td>
+                            </tr>
+                            <tr>
+                                <td>Reason:</td>
+                                <td>{{AssetHistoryItem.reason}}</td>
+                            </tr>
+                        </table>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>
+
+
+<ng-template #noassetTemplate>
+
+    <div class="col s12">
+        <div class="card  white">
+            <div class="card-content indigo-text text-darken-2">
+                Loading...
+
+            </div>
+        </div>
+    </div>
+</ng-template>
